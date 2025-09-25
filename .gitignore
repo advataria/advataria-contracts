@@ -1,0 +1,19 @@
+# Build outputs
+out/
+cache/
+
+# Libraries
+lib/
+
+# Environment files
+.env
+
+# Node / NPM
+node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
