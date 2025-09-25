@@ -8,18 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Foundry
-        run: |
-          curl -L https://foundry.paradigm.xyz | bash
-          export PATH="$HOME/.foundry/bin:$PATH"
-          foundryup
+      - name: Install Foundry (official action)
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
 
       - name: Build
-        run: |
-          export PATH="$HOME/.foundry/bin:$PATH"
-          forge build
+        run: forge build
 
       - name: Run tests
-        run: |
-          export PATH="$HOME/.foundry/bin:$PATH"
-          forge test -vv
+        run: forge test -vv
